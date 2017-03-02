@@ -39,7 +39,7 @@ public class FahrenheitServlet extends HttpServlet {
 		String celsiusTempString = request.getParameter("temperature_in_celsius");
 		PrintWriter out = response.getWriter();
 		try{
-			int celsiusTempInteger = ((Integer.parseInt(celsiusTempString)*9)/5) + 32;
+			double celsiusTempInteger = ((Double.parseDouble(celsiusTempString)*9)/5) + 32;
 			out.println("O resultado: "+ celsiusTempInteger + " F");
 		} catch(NumberFormatException nfe){
 			out.println("O formato inserido não é adequado para a conversão. Por favor utilize apenas números.");
