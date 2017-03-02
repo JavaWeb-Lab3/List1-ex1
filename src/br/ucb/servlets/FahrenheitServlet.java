@@ -38,7 +38,9 @@ public class FahrenheitServlet extends HttpServlet {
 		
 		String celsiusTempString = request.getParameter("temperature_in_celsius");
 		PrintWriter out = response.getWriter();
-		out.println(celsiusTempString);
+		int celsiusTempInteger = ((Integer.parseInt(celsiusTempString)*9)/5) + 32;
+		
+		out.println("O resultado: "+ celsiusTempInteger + " F");
 	}
 
 }
